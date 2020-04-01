@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Adjust Matrices</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/MapSmoo.css">
+    <link rel="stylesheet" href="css/sidenav.css" />
+</head>
+
+<body>
+
+    <!-- Side navigation menu -->
+	<div id="mySidenav" class="sidenav2">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="index.html">Map</a>
+		<a href="compare.html">Compare</a>
+        <!-- <a href="matrices.html">Matrices</a> -->
+        <a href="weightage.html" style="background-color: rgba(255,255,255,0.05);">Adjust Matrices</a>
+	</div>
+
+	<div id="main">
+		<span id="sidemenu" style="font-size:30px;cursor:pointer" onclick="openNav()">
+			<img src='icons/menu2.png'>
+        </span>
+
+        <div id='body'>  
+            
+            <div class='clearfix'>
+                
+                <!-- ERROR ALERTS: HIDDEN -->
+                <center>
+                    <div id="success-alert" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none">
+                        Matrices successfully adjusted!
+                        <button type="button" class="close" data-hide="alert">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </center>
+
+                <center>
+                    <div id="error-alert" class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none">
+                        Oh no! Please ensure total score is 100%, and inputs have no errors.
+                        <button type="button" class="close" data-hide="alert">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </center>
+                <!-- END OF ERROR ALERTS-->
+                
+                <div class='top-info-weightage'>
+        
+                    <!-- RESET BUTTON -->
+                    <span>
+                        <input type="button" id="reset-weightage" class="btnresetweight" value="Reset" onclick="resetWeight()"/>
+                    </span>
+                    
+                    <!-- TOTAL WEIGHTAGE -->
+                    <span id="total-weight">
+                        <b>100%</b>
+                    </span>
+                    
+                    <!-- APPLY BUTTON -->
+                    <span onclick="check_apply()">
+                        <button id="apply-weightage" class="btn btn-info matrices-submit" type="button">
+                            <b>Apply</b>
+                        </button>                        
+                    </span>
+                </div>
+            </div>
+            <!-- CARDS INPUT SECTION -->
+            <div id='cards'>
+                <div class="card-deck matrices">
+
+                    <!-- CONNECTIVITY CARD -->
+                    <div class="card matrices-card" style="width: 18rem;">
+                        <div class="card-body">
+                            <div class='card-heading'>
+                                <div class="metric-card-header">
+                                    <h5 class="card-title">
+                                        <b>Connectivity</b>
+                                    </h5>
+                                </div>
+                                <span id="connectivity-weight" class="weightage-badge">
+                                    <b>40%</b>
+                                </span>
+                            </div>
+                            
+                            <table class="table" id='metrictable'>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Availability and accessibility of public transport</th>
+                                        <td>
+                                            <input id='s1-1' class="form-control" type="text" value="20">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Availability of infrastructure for alternative modes of transport</th>
+                                        <td><input id='s1-2' class="form-control" type="text" value="15"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Road intersection density</th>
+                                        <td><input id='s1-3' class="form-control" type="text" value="5"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- END OF CONNECTIVITY CARD -->
+
+                    <!-- LAND USE CARD -->
+                    <div class="card matrices-card" style="width: 18rem;">
+                        <div class="card-body">
+                            <div class='card-heading'>
+                                <div class="metric-card-header">
+                                    <h5 class="card-title">
+                                        <b>Land Use Mix</b>
+                                    </h5>
+                                </div>
+                                <span id="landuse-weight" class="weightage-badge">
+                                    <b>25%</b>
+                                </span>
+                            </div>
+
+                            <table class="table" id='metrictable'>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Diversity in land use</th>
+                                        <td>
+                                            <input id='s2-1' class="form-control" type="text" value="10">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Proximity to essential facilities</th>
+                                        <td><input id='s2-2' class="form-control" type="text" value="15"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- END OF LAND USE CARD -->
+                </div>
+
+                <div class="card-deck matrices">
+
+                    <!-- START OF SUPPORTING FACILITIES CARD -->
+                    <div class="card matrices-card" style="width: 18rem;">
+                        <div class="card-body">
+                            <div class='card-heading'>
+                                <div class="metric-card-header">
+                                    <h5 class="card-title">
+                                        <b>Supporting Facilities</b>
+                                    </h5>
+                                </div>
+                                <span id="facil-weight" class="weightage-badge">
+                                    <b>15%</b>
+                                </span>
+                            </div>
+                            
+                            <table class="table" id='metrictable'>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">End-of-mile facilities</th>
+                                        <td>
+                                            <input id="s3-1" class="form-control" type="text" value="5">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Sheltered areas</th>
+                                        <td><input id="s3-2" class="form-control" type="text" value="10"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- END OF SUPPORTING FACILITIES CARD -->
+
+                    <!-- START OF PARKING MANAGEMENT CARD -->
+                    <div class="card matrices-card" style="width: 18rem;">
+                        <div class="card-body">
+                            <div class='card-heading'>
+                                <div class="metric-card-header">
+                                    <h5 class="card-title">
+                                        <b>Parking Management</b>
+                                    </h5>
+                                </div>
+                                <span id="parking-weight" class="weightage-badge">
+                                    <b>10%</b>
+                                </span>
+                            </div>
+                    
+                            <table class="table" id='metrictable'>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Availability of car park lots</th>
+                                        <td>
+                                            <input id="s4-1" class="form-control" type="text" value="5">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Car park pricing</th>
+                                        <td><input id="s4-2" class="form-control" type="text" value="5"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- END OF PARKING MANAGEMENT CARD -->
+
+                    <!-- START OF SAFETY CARD -->
+                    <div class="card matrices-card" style="width: 18rem;">
+                        <div class="card-body">
+                            <div class='card-heading'>
+                                <div class="metric-card-header">
+                                    <h5 class="card-title">
+                                        <b>Pedestrian Safety</b>
+                                    </h5>
+                                </div>
+                                <span id="safety-weight" class="weightage-badge">
+                                    <b>10%</b>
+                                </span>
+                            </div>
+
+                            <table class="table" id='metrictable'>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Safe roads and walkways</th>
+                                        <td>
+                                            <input id="s5-1" class="form-control" type="text" value="10">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- END OF SAFETY CARD -->
+                </div>
+            </div>
+            <!-- END OF CARDS SECTION -->
+        </div>
+
+        <input type="image" id="tutorial" src='icons/tutorial.png' class='tutorial' onclick="tour.start();"
+        value="Tutorial" />
+
+        <!-- TO FADE CONTENT WHEN MENU OPENS -->
+        <div id="for-wrap">
+        </div>
+
+    </div>
+        
+    <script type="text/javascript" src="sidenav.js"></script>
+    <script type="text/javascript" src="weightage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/shepherd.js@5.0.1/dist/js/shepherd.js"></script>
+    <script type="text/javascript" src="guide-weightage.js"></script>
+    <script>
+        populateValue()
+    </script>
+</body>
+

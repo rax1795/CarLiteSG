@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Car-Lite Singapore</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<!-- for leaflet -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+		integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+		crossorigin="" />
+	<!-- Make sure you put this AFTER Leaflet's CSS -->
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+		integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+		crossorigin=""></script>
+
+	
+	<!-- for leaflet custom styles and plugins-->
+	<link rel="stylesheet" href="css/MarkerCluster.css" />
+	<link rel="stylesheet" href="css/MarkerCluster.Default.css" />
+	<script src="leaflet.markercluster.js"></script>
+
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+	<link rel="stylesheet" href="css/styledLayerControl.css" />
+	<script src="styledLayerControl.js"></script>
+
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	
+
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+	<!-- for Dropdown List-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="css/MapSmoo.css">
+	<link rel="stylesheet" href="css/sidenav.css" />
+	<link rel="stylesheet" href="css/loading.css" />
+
+</head>
+
+<body>
+
+	<!-- Loading screen -->
+	<div class="loader-wrapper"><div class="loading">
+		<span>Loading</span>
+		</div>
+	</div>
+	<!-- End of loading screen -->
+
+	<!-- Side navigation menu -->
+	<div id="mySidenav" class="sidenav2">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="index.html" style="background-color: rgba(255,255,255,0.05);">Map</a>
+		<a href="compare.html">Compare</a>
+		<!-- <a href="matrices.html">Matrices</a> -->
+		<a href="weightage.html">Adjust Matrices</a>
+	</div>
+
+	<div id="main">
+		<span id="sidemenu" style="font-size:30px;cursor:pointer" onclick="openNav()">
+			<img src='icons/menu2.png'>
+		</span>
+
+		<!--Contents-->
+		<div id="body">
+			<div id="map"></div>
+
+			<div id="sidenav" class="sidenav1">
+				<h5>
+					<center>Zoom to neighbourhood</center>
+				</h5>
+
+				<select class="form-control select2 map1" id='firstList' name='firstList' onchange="zoomTo()">
+				</select>
+
+				<script>
+					$('.select2').select2({ placeholder: "Select neighbourhood" });
+				</script>
+				<br><br>
+
+				<h5 id='subzone-selected'></h5>
+				<table class="table table-dark" id='metrictable'>
+					<thead>
+						<tr>
+							<th scope="col">Metric</th>
+							<th scope="col">Score</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">
+								Connectivity &nbsp;
+								<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" data-html="true" title="<b>&bull; Availability and accessibility of public transport <br>&bull; Availability of infrastructure for alternative modes of transport <br>&bull; Road intersection density</b>">
+									<i><b>i</b></i>
+								</button>
+							</th>
+							<td>-</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								Land Use Mix &nbsp;
+								<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" data-html="true" title="<b>&bull; Diversity in land use <br>&bull; Proximity to essential facilities</b>">
+									<i><b>i</b></i>
+								</button>
+							</th>
+							<td>-</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								Supporting Facilities &nbsp;
+								<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" data-html="true" title="<b>&bull; End-of-mile facilities <br>&bull; Sheltered areas</b>">
+									<i><b>i</b></i>
+								</button>
+							</th>
+							<td>-</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								Parking Management &nbsp;
+								<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" data-html="true" title="<b>&bull; Availability of car park lots <br>&bull; Car park pricing</b>">
+									<i><b>i</b></i>
+								</button>
+							</th>
+							<td>-</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								Pedestrian Safety &nbsp;
+								<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" data-html="true" title="<b>&bull; Safe roads and walkways</b>">
+									<i><b>i</b></i>
+								</button>
+							</th>
+							<td>-</td>
+						</tr>
+
+						<tr>
+							<th scope="row" style="background-color: rgb(66,74,82);">
+								Car-lite Score &nbsp;
+								<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" data-html="true" title="<b>The higher the score, the more car-lite the neighbourhood &#128522;</b>">
+									<i><b>i</b></i>
+								</button>
+							</th>
+							<td style="background-color: rgb(66,74,82)">-</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<script>
+					$(function () {
+  						$('[data-toggle="tooltip"]').tooltip()
+					})
+				</script>
+				<br>
+				
+				<input type="button" id="reset-zoom" class="btnresetzoom" onclick="reset()" value="Reset Zoom" />
+				<input type="image" id="tutorial" src='icons/tutorial.png' class='tutorial' onclick="tour.start();"
+					value="Tutorial" />
+				<input type="image" id="popup-index" src='icons/matrices.png' class='popup' onclick="popupOpen();"/>
+				
+			</div>
+
+
+			<!-- START OF POPUP -->
+			<div class='popup-container'>
+				
+				<div class='popup-title'>
+					<h4><center><b>Matrices Weightage</b></center></h4>
+				</div>
+				
+				<button onclick='popupClose()'>
+					<span>&times;</span>
+				</button>
+				
+				<div id='popup-left' class='popup-section'>
+
+					<h6><b>Connectivity</b></h6>
+					<table class="table table-dark" id="popup-table">
+						<tbody>
+							<tr>
+								<th scope="row">
+									Availability and accessibility of public transport
+								</th>
+								<td id="availPublic">20</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Availability of infrastructure for alternative modes of transport
+								</th>
+								<td id="availAlt">15</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Road intersection density
+								</th>
+								<td id="roadInt">5</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br>
+					<h6><b>Land Use Mix</b></h6>
+					<table class="table table-dark" id="popup-table">
+						<tbody>
+							<tr>
+								<th scope="row">
+									Diversity in land use
+								</th>
+								<td id="divesityLand">10</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Proximity to essential facilities
+								</th>
+								<td id="proximityFacil">15</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div id='popup-right' class='popup-section'>
+
+					<h6><b>Supporting Facilities</b></h6>
+					<table class="table table-dark" id="popup-table">
+						<tbody>
+							<tr>
+								<th scope="row">
+									End-of-mile facilities
+								</th>
+								<td id="endMile">5</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Sheltered areas
+								</th>
+								<td id="shelter">10</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br>
+					<h6><b>Parking Management</b></h6>
+					<table class="table table-dark" id="popup-table">
+						<tbody>
+							<tr>
+								<th scope="row">
+									Availability of car park lots
+								</th>
+								<td id="carLots">5</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Car park pricing
+								</th>
+								<td id="carPricing">5</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br>
+					<h6><b>Pedestrian Safety</b></h6>
+					<table class="table table-dark" id="popup-table">
+						<tbody>
+							<tr>
+								<th scope="row">
+									Safe roads and walkways
+								</th>
+								<td id="safetys">10</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+			<!-- END OF POPUP -->
+
+		</div>
+
+		<!-- TO FADE CONTENT WHEN MENU OPENS -->
+		<div id="for-wrap">
+		</div>
+
+	</div>
+	
+	<script type="text/javascript" src="map.js"></script>
+	<script type="text/javascript" src="sidenav.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/shepherd.js@5.0.1/dist/js/shepherd.js"></script>
+	<script type="text/javascript" src="guide-index.js"></script>
+	<script type="text/javascript" src="popup.js"></script>
+
+	<!-- HIDE POPUP -->
+	<script>
+		$('.popup-container').hide();
+	</script>
+
+
+	<!-- LOADING SCREEN -->
+	<script>
+        $(window).on("load",function(){
+		$(".loader-wrapper").delay(700).fadeOut(100)
+			});
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Matrices</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="css/MapSmoo.css">
+    <link rel="stylesheet" href="css/sidenav.css">
+    <link rel="stylesheet" href="css/matrices.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <div id="mySidenav" class="sidenav2">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="index.html">Map</a>
+		<a href="compare.html">Compare</a>
+        <a href="matrices.html" style="background-color: rgba(255,255,255,0.05);">Matrices</a>
+        <a href="weightage.html">Adjust Matrices</a>
+    </div>
+    
+	<div id="main">
+		<span id="sidemenu" style="font-size:30px;cursor:pointer" onclick="openNav()">
+			<img src='icons/menu2.png'>
+        </span>
+
+        <div id="body">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                <h2>Car-lite Scoring</h2>
+                <p>
+                    Phasellus viverra nulla ut metus varius laoreet. Nullam dictum felis eu pede mollis pretium. Suspendisse non nisl sit amet velit hendrerit rutrum. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Sed fringilla mauris sit amet nibh.Phasellus viverra nulla ut metus varius laoreet. Nullam dictum felis eu pede mollis pretium. Suspendisse non nisl sit amet velit hendrerit rutrum. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Sed fringilla mauris sit amet nibh.Phasellus viverra nulla ut metus varius laoreet. Nullam dictum felis eu pede mollis pretium. Suspendisse non nisl sit amet velit hendrerit rutrum. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Sed fringilla mauris sit amet nibh.
+                </p>
+                <br>
+                <form method='POST' action='./index.html'>
+                    <input type="submit" class="btnresetzoom" value="go to map" />
+                </form>
+                </div>
+            </div>
+
+
+            <div class='row dashboard-cards justify-content-center'>
+                
+                <!-- Connectivity -->
+                <div class='card col-md-4'>
+                    <div class='card-title'>
+                        <img src='matrices_img/connectivity.png' class='center'>
+                        <br>
+                        <h2>
+                            Connectivity
+                        </h2>
+                        <div class='task-count'>
+                            40%
+                        </div>
+                    </div>
+                    <div class='card-flap flap1'>
+                        <div class='card-description'>
+                            <ul class='task-list'>
+                                <li class="list">
+                                    <b>Availability and accessibility of public transport</b>
+                                    <p>The availability and proximity of public transport to home and work encourages the use of public
+                                        transport</p>
+                                    <p class='points'>20 pts</p>
+                                </li>
+                                <li class="list">
+                                    <b>Availability of infrastructure for alternative modes of transport</b>
+                                    <p>The availability and proximity of public transport to home and work encourages the use of public
+                                        transport</p>
+                                    <p class='points'>15 pts</p>
+                                </li>
+                                <li class="list">
+                                    <b>Road intersection density</b>
+                                    <p>Areas with higher number of intersections offer more direct routes to navigate an area,
+                                        increasing connectivity. This reduces the need for travel by car</p>
+                                    <p class='points'>5 pts</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class='card-flap flap2'>
+                            <div class='card-actions'>
+                                <a class='btn' href='#'>Close</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Land use mix -->
+                <div class='card col-md-4'>
+                    <div class='card-title'>
+                        <img src='matrices_img/landuse.png' class='center'>
+                        <br>
+                        <h2>
+                            Land Use Mix
+                        </h2>
+                        <div class='task-count'>
+                            25%
+                        </div>
+                    </div>
+                    <div class='card-flap flap1'>
+                        <div class='card-description'>
+                            <ul class='task-list'>
+                                <li class="list">
+                                    <b>Diversity in land use</b>
+                                    <p>A good mix of land uses reduces the need to travel outside the neighbourhood</p>
+                                    <p class='points'>10 pts</p>
+                                </li>
+                                <li class="list">
+                                    <b>Proximity to essential facilities</b>
+                                    <p>
+                                        Easy access to various amenities provides convenience and encourages active modes of transport
+                                        like cycling and walking
+                                        <br><br>
+                                        <b><u>Essential facilities include</u></b>
+                                        <div class="facil">
+                                            <ul>
+                                                <li>
+                                                    <b>Medical facilities</b>
+                                                    <br>
+                                                    Polyclinics, hospitals, CHAS clinics
+                                                </li>
+                                                <li>
+                                                    <b>Schools</b>
+                                                    <br>
+                                                    Primary and secondary
+                                                </li>
+                                                <li>
+                                                    <b>Amenities</b>
+                                                    <br>
+                                                    Preschools, eldercare, parks
+                                                </li>
+                                                <li>
+                                                    <b>Source of food</b>
+                                                    <br>
+                                                    Hawker centres, supermarkets
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </p>
+                                    <p class='points'>15 pts</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class='card-flap flap2'>
+                            <div class='card-actions'>
+                                <a class='btn' href='#'>Close</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supporting Facilities -->
+                <div class='card col-md-4'>
+                    <div class='card-title'>
+                        <img src='matrices_img/supportingfacil.png' class='center'>
+                        <br>
+                        <h2>
+                            Supporting Facilities
+                        </h2>
+                        <div class='task-count'>
+                            15%
+                        </div>
+                    </div>
+                    <div class='card-flap flap1'>
+                        <div class='card-description'>
+                            <ul class='task-list'>
+                                <li class="list">
+                                    <b>End-of-mile facilities</b>
+                                    <p>The availability of end-of-mile facilities like bike parking provides a more convenient cycling environment, encouraging more people to pursue cycling as a mode of transportation</p>
+                                    <p class='points'>5 pts</p>
+                                </li>
+                                <li class="list">
+                                    <b>Sheltered areas</b>
+                                    <p>The availability of shaded areas and sheltered walkways encourages active modes of transport like walking and cycling</p>
+                                    <p class='points'>10 pts</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class='card-flap flap2'>
+                            <div class='card-actions'>
+                                <a class='btn' href='#'>Close</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parking Management -->
+                <div class='card col-md-4'>
+                    <div class='card-title'>
+                        <img src='matrices_img/parking.png' class='center'>
+                        <br>
+                        <h2>
+                            Parking Management
+                        </h2>
+                        <div class='task-count'>
+                            10%
+                        </div>
+                    </div>
+                    <div class='card-flap flap1'>
+                        <div class='card-description'>
+                            <ul class='task-list'>
+                                <li class="list">
+                                    <b>Availability of car park lots</b>
+                                    <p>Reducing car park availability visibly discourages the use of cars by placing a disincentive to drive in the neighbourhood</p>
+                                    <p class='points'>5 pts</p>
+                                </li>
+                                <li class="list">
+                                    <b>Car park pricing</b>
+                                    <p>Higher parking fees discourage the use of cars by placing a disincentive to drive in the neighbourhood</p>
+                                    <p class='points'>5 pts</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class='card-flap flap2'>
+                            <div class='card-actions'>
+                                <a class='btn' href='#'>Close</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safety -->
+                <div class='card col-md-4'>
+                    <div class='card-title'>
+                        <img src='matrices_img/safety.png' class='center'>
+                        <br>
+                        <h2>
+                            Pedestrian Safety
+                        </h2>
+                        <div class='task-count'>
+                            10%
+                        </div>
+                    </div>
+                    <div class='card-flap flap1'>
+                        <div class='card-description'>
+                            <ul class='task-list'>
+                                <li class="list">
+                                    <b>Safe roads and walkways</b>
+                                    <p>Safer roadways and walkways make pedestrians feel safer, empowering even the vulnerable groups (children and elderly) to use walkways instead of relying on transportation by cars. More road safety features will make roads safer for pedestrians and encourage walking</p>
+                                    <p class='points'>10 pts</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class='card-flap flap2'>
+                            <div class='card-actions'>
+                                <a class='btn' href='#'>Close</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              </div>  
+        </div>
+    </div>
+
+    <!-- TO FADE CONTENT WHEN MENU OPENS -->
+    <div id="for-wrap">
+    </div>
+
+    <script type="text/javascript" src="sidenav.js"></script>
+    <script type="text/javascript" src="matrices.js"></script>
+
+</body>
+
+</html>
