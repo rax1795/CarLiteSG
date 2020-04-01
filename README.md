@@ -1,2 +1,2 @@
 # MapSmoo
- Visualising and underastanding car lite scores in singapore utilising a GIS
+ Visualising and understanding car lite scores in Singapore utilising a GIS
