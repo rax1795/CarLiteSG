@@ -688,7 +688,7 @@ $.when(subzone, speedstrips, roadhumps, chas, linkway, hawker, hopitals, park, s
     var roadcross9 = L.geoJSON(roadcross.responseJSON, {
         onEachFeature: onEachroad,
         style: function (feature) {
-            return {color: '#700460',
+            return {color: 'rgb(2,42,122)',
                     weight: 3};
         }
     })
@@ -722,7 +722,7 @@ $.when(subzone, speedstrips, roadhumps, chas, linkway, hawker, hopitals, park, s
     var silver11 = L.geoJSON(silver.responseJSON, {
         onEachFeature: onEachSilverzone,
         style: function (feature) {
-            return {color: '#045359',
+            return {color: 'rgb(93, 111, 243)',
                     weight: 3};
         }
     })

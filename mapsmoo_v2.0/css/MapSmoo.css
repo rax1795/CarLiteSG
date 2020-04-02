@@ -521,7 +521,7 @@ body.shepherd-active::after {
 }
 /* END OF CSS FOR TOOLTIP -------------------------------------*/
 
-/* START OF CSS FOR POPUP -------------------------------------*/
+/* START OF CSS FOR WEIGHTAGE POPUP -------------------------------------*/
 .popup-container {
   z-index: 99999;
   background-color: rgb(59,60,62);
@@ -624,4 +624,70 @@ body.shepherd-active::after {
 .select2-selection__rendered {
   font-size: 14px;
   vertical-align: middle;
+}
+
+/* START OF CSS FOR LEGEND POPUP */
+.popup-legend {
+  z-index: 99999;
+  background-color: rgb(59,60,62);
+  padding: 10px;
+  width: 28%;
+  height: 90%;
+  border-radius: 20px;
+  color: white;
+  /* center the div */
+  position: fixed;
+  /* margin: auto; */
+  /* display: inline-block; */
+  top: 20px;
+  right: 1%;
+  /* bottom: 0; */
+
+  display: none;
+}
+
+.popup-legend button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-right: 15px;
+  font-size: 40px;
+  color: #f4f4f4;
+  background-color: transparent;
+  border: none;
+}
+
+.legend-section {
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+#legend-table td{
+  /* background-color: rgb(165, 172, 179); */
+  text-align: center;
+  font-size: 40px;
+  padding: 0px;
+}
+
+#legend-table th{
+  /* background-color: rgb(165, 172, 179); */
+  color: rgb(165, 172, 179);
+  vertical-align: middle;
+}
+
+#legend-table tr {
+  background-color: rgb(59,60,62);
+}
+
+.legend-hide {
+  display: inline-block;
+  height: 100%;
+  width: 30%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: black;
+  overflow-x: hidden;
+  opacity:    0.5; 
+  z-index:    9999;
 }

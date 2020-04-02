@@ -25,3 +25,14 @@ function popupClose() {
     $('.popup-container').css('display','none');
     document.getElementById("for-wrap").classList.remove("fadeMe");
 }
+
+function legendOpen() {
+    $(".popup-legend").css('display','block');
+    document.getElementById("legend-wrap").setAttribute("class", "legend-hide");
+}
+
+function legendClose() {
+    $('.popup-legend').css('display','none');
+    document.getElementById("legend-wrap").classList.remove("legend-hide");
+
+}
