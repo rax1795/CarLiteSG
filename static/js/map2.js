@@ -510,7 +510,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
 
     var bikerackIcon = L.icon({
         iconUrl: '/static/icons/bikerack.png',
-        iconsize: [45, 45],
+        iconSize: [45, 45],
         popupAnchor: [-5, -14],
     });
 
@@ -538,7 +538,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             return L.divIcon({
                 html: '<b> ' + cluster.getChildCount() + ' </b>',
                 className: 'fas fa-bicycle mycluster',
-                iconsize: L.point(40, 40)
+                iconSize: L.point(40, 40)
             });
         }
     });
@@ -548,7 +548,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
 
     var busIcon = L.icon({
         iconUrl: '/static/icons/bus.png',
-        iconsize: [45, 45],
+        iconSize: [45, 45],
         popupAnchor: [-5, -14],
     });
 
@@ -587,7 +587,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             return L.divIcon({
                 html: '<b> ' + cluster.getChildCount() + ' </b>',
                 className: 'fas fa-bus mycluster',
-                iconsize: L.point(40, 40)
+                iconSize: L.point(40, 40)
             });
         }
     });
@@ -627,7 +627,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
 
     var carparkIcon = L.icon({
         iconUrl: '/static/icons/carpark.png',
-        iconsize: [45, 45],
+        iconSize: [45, 45],
         popupAnchor: [-5, -14],
     });
 
@@ -658,7 +658,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             return L.divIcon({
                 html: '<b> ' + cluster.getChildCount() + ' </b>',
                 className: 'fas fa-car mycluster',
-                iconsize: L.point(40, 40)
+                iconSize: L.point(40, 40)
             });
         }
     });
@@ -667,7 +667,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
 
     var MRTicon = L.icon({
         iconUrl: '/static/icons/train.png',
-        iconsize: [45, 45],
+        iconSize: [45, 45],
         popupAnchor: [-5, -14],
     });
 
@@ -697,7 +697,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             return L.divIcon({
                 html: '<b> ' + cluster.getChildCount() + ' </b>',
                 className: 'fas fa-train mycluster',
-                iconsize: L.point(40, 40)
+                iconSize: L.point(40, 40)
             });
         }
     });
@@ -789,7 +789,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
 
     var schoolIcon = L.icon({
         iconUrl: '/static/icons/school.png',
-        iconsize: [45, 45],
+        iconSize: [45, 45],
         popupAnchor: [-5, -14],
     });
 
@@ -820,7 +820,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             return L.divIcon({
                 html: '<b> ' + cluster.getChildCount() + ' </b>',
                 className: 'fas fa-graduation-cap mycluster',
-                iconsize: L.point(40, 40)
+                iconSize: L.point(40, 40)
             });
         }
     });
@@ -830,7 +830,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
 
     var supermarketIcon = L.icon({
         iconUrl: '/static/icons/supermarket.png',
-        iconsize: [45, 45],
+        iconSize: [45, 45],
         popupAnchor: [-5, -14],
     });
 
@@ -860,7 +860,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             return L.divIcon({
                 html: '<b> ' + cluster.getChildCount() + ' </b>',
                 className: 'fas fa-shopping-cart mycluster',
-                iconsize: L.point(40, 40)
+                iconSize: L.point(40, 40)
             });
         }
     });
@@ -870,7 +870,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
 
     var residenceIcon = L.icon({
         iconUrl: '/static/icons/residence.png',
-        iconsize: [35, 35],
+        iconSize: [35, 35],
         popupAnchor: [-5, -14],
     });
 
@@ -900,7 +900,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             return L.divIcon({
                 html: '<b> ' + cluster.getChildCount() + ' </b>',
                 className: 'fas fa-home mycluster',
-                iconsize: L.point(40, 40)
+                iconSize: L.point(40, 40)
             });
         }
     });
@@ -910,7 +910,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
 
     var preschIcon = L.icon({
         iconUrl: '/static/icons/preschool.png',
-        iconsize: [45, 45],
+        iconSize: [45, 45],
         popupAnchor: [-5, -14],
     });
 
@@ -940,7 +940,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             return L.divIcon({
                 html: '<b> ' + cluster.getChildCount() + ' </b>',
                 className: 'fas fa-child mycluster',
-                iconsize: L.point(40, 40)
+                iconSize: L.point(40, 40)
             });
         }
     });
@@ -950,7 +950,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
 
     var polyclinicIcon = L.icon({
         iconUrl: '/static/icons/polyclinic.png',
-        iconsize: [45, 45],
+        iconSize: [45, 45],
         popupAnchor: [-5, -14],
     });
 
@@ -980,7 +980,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             return L.divIcon({
                 html: '<b> ' + cluster.getChildCount() + ' </b>',
                 className: 'fas fa-clinic-medical mycluster',
-                iconsize: L.point(40, 40)
+                iconSize: L.point(40, 40)
             });
         }
     });
@@ -990,7 +990,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
 
     var parkIcon = L.icon({
         iconUrl: '/static/icons/park.png',
-        iconsize: [45, 45],
+        iconSize: [45, 45],
         popupAnchor: [-5, -14],
     });
 
@@ -1032,7 +1032,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             return L.divIcon({
                 html: '<b> ' + cluster.getChildCount() + ' </b>',
                 className: 'fas fa-tree mycluster',
-                iconsize: L.point(40, 40)
+                iconSize: L.point(40, 40)
             });
         }
     });
@@ -1042,7 +1042,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
 
     var hospitalIcon = L.icon({
         iconUrl: '/static/icons/hospital.png',
-        iconsize: [45, 45],
+        iconSize: [45, 45],
         popupAnchor: [-5, -14],
     });
 
@@ -1072,7 +1072,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             return L.divIcon({
                 html: '<b> ' + cluster.getChildCount() + ' </b>',
                 className: 'fas fa-hospital mycluster',
-                iconsize: L.point(40, 40)
+                iconSize: L.point(40, 40)
             });
         }
     });
@@ -1082,7 +1082,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
 
     var eldercareIcon = L.icon({
         iconUrl: '/static/icons/eldercare.png',
-        iconsize: [45, 45],
+        iconSize: [45, 45],
         popupAnchor: [-5, -14],
     });
 
@@ -1113,7 +1113,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             return L.divIcon({
                 html: '<b> ' + cluster.getChildCount() + ' </b>',
                 className: 'fas fa-blind mycluster',
-                iconsize: L.point(40, 40)
+                iconSize: L.point(40, 40)
             });
         }
     });
@@ -1123,7 +1123,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
 
     var hawkerIcon = L.icon({
         iconUrl: '/static/icons/hawkercentre.png',
-        iconsize: [45, 45],
+        iconSize: [45, 45],
         popupAnchor: [-5, -14],
     });
 
@@ -1184,7 +1184,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             return L.divIcon({
                 html: '<b> ' + cluster.getChildCount() + ' </b>',
                 className: 'fas fa-utensils mycluster',
-                iconsize: L.point(40, 40)
+                iconSize: L.point(40, 40)
             });
         }
     });
@@ -1194,7 +1194,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
 
     var chasclinicIcon = L.icon({
         iconUrl: '/static/icons/chasclinics.png',
-        iconsize: [45, 45],
+        iconSize: [45, 45],
         popupAnchor: [-5, -14],
     });
 
@@ -1224,7 +1224,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             return L.divIcon({
                 html: '<b> ' + cluster.getChildCount() + ' </b>',
                 className: 'fas fa-prescription-bottle-alt mycluster',
-                iconsize: L.point(40, 40)
+                iconSize: L.point(40, 40)
             });
         }
     });
@@ -1313,6 +1313,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
     }).addTo(map2);
 
     map2.on('load', sortSelect(document.getElementById('secondList')));
+    map2.on('load', $(".loader-wrapper").fadeOut(100))
 });
 
 function zoomTo2() {

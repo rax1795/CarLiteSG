@@ -18,12 +18,12 @@ function popupOpen() {
     }
 
     $(".popup-container").css('display','block');
-    document.getElementById("for-wrap").setAttribute("class", "fadeMe");
+    document.getElementById("for-weightage").setAttribute("class", "fadeMe");
 }
 
 function popupClose() {
     $('.popup-container').css('display','none');
-    document.getElementById("for-wrap").classList.remove("fadeMe");
+    document.getElementById("for-weightage").classList.remove("fadeMe");
 }
 
 function legendOpen() {
@@ -45,5 +45,4 @@ function compareLegendOpen() {
 function compareLegendClose() {
     $('.compare-legend').css('display','none');
     document.getElementById("for-compare-wrap").classList.remove("fadeMe");
-
 }
