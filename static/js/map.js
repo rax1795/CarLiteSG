@@ -25,203 +25,203 @@ function sortSelect(selElem) {
 }
 
 var subzone = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/subzone_metrics.geojson",
+    url: "http://127.0.0.1:5000/data/subzone_metrics.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded1."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 // var centroids = $.ajax({
-//     url: "https://raw.githubusercontent.com/rax1795/data/master/subzone_metrics_centroid.geojson",
+//     url: "http://127.0.0.1:5000/data/subzone_metrics_centroid.geojson",
 //     dataType: "json",
 //     success: console.log(" data successfully loaded1."),
 //     error: function (xhr) {
-//         alert(xhr.statusText)
+//         console.log(xhr.statusText)
 //     }
 // });
 var bicycle = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/bicyclerack.geojson",
+    url: "http://127.0.0.1:5000/data/bicyclerack.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded2."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 var bustop = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/busstop.geojson",
+    url: "http://127.0.0.1:5000/data/busstop.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded3."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 var linkway = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/covered_linkway.geojson",
+    url: "http://127.0.0.1:5000/data/covered_linkway.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded4."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 var cycling = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/cyclingpath.geojson",
+    url: "http://127.0.0.1:5000/data/cyclingpath.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded5."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 var carpark = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/hdb_carpark.shp.geojson",
+    url: "http://127.0.0.1:5000/data/hdb_carpark.shp.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded6."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 var mrt = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/mrt_lrt_station.geojson",
+    url: "http://127.0.0.1:5000/data/mrt_lrt_station.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded7."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 var park = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/park_connector_loop.geojson",
+    url: "http://127.0.0.1:5000/data/park_connector_loop.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded8."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 var roadcross = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/road_crossing.shp.geojson",
+    url: "http://127.0.0.1:5000/data/road_crossing.shp.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded9."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 var schoolzone = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/schoolzone.geojson",
+    url: "http://127.0.0.1:5000/data/schoolzone.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded10."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 var silver = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/silverzone.geojson",
+    url: "http://127.0.0.1:5000/data/silverzone.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded11."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 
 var roadhumps = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/road_hump.shp.geojson",
+    url: "http://127.0.0.1:5000/data/road_hump.shp.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded11."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 
 var schools = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/schools_pri_sec.shp.geojson",
+    url: "http://127.0.0.1:5000/data/schools_pri_sec.shp.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded11."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 
 var supermarkets = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/supermarkets.shp.geojson",
+    url: "http://127.0.0.1:5000/data/supermarkets.shp.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded11."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 
 var residences = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/residences_centroid.geojson",
+    url: "http://127.0.0.1:5000/data/residences_centroid.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded11."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 
 var preschools = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/preschools.shp.geojson",
+    url: "http://127.0.0.1:5000/data/preschools.shp.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded11."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 
 var polyclinics = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/polyclinics.shp.geojson",
+    url: "http://127.0.0.1:5000/data/polyclinics.shp.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded11."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 
 var nationalpark = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/nationalparks.shp.geojson",
+    url: "http://127.0.0.1:5000/data/nationalparks.shp.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded11."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 
 var hopitals = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/hospitals.shp.geojson",
+    url: "http://127.0.0.1:5000/data/hospitals.shp.geojson",
     dataType: "json",
     success: console.log(" data successfully loaded11."),
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 
 var eldercare = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/eldercare_centre.shp.geojson",
+    url: "http://127.0.0.1:5000/data/eldercare_centre.shp.geojson",
     dataType: "json",
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 
 var hawker = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/hawker.shp.geojson",
+    url: "http://127.0.0.1:5000/data/hawker.shp.geojson",
     dataType: "json",
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 
 var chas = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/CHAS_clinics.shp.geojson",
+    url: "http://127.0.0.1:5000/data/CHAS_clinics.shp.geojson",
     dataType: "json",
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 
 var speedstrips = $.ajax({
-    url: "https://raw.githubusercontent.com/rax1795/data/master/speed_regulating_strip.shp.geojson",
+    url: "http://127.0.0.1:5000/data/speed_regulating_strip.shp.geojson",
     dataType: "json",
     error: function (xhr) {
-        alert(xhr.statusText)
+        console.log(xhr.statusText)
     }
 });
 var grey = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
