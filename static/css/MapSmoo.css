@@ -656,6 +656,10 @@ body.shepherd-active::after {
   vertical-align: middle;
 }
 
+.select2-results__option {
+  font-size: 14px;
+}
+
 /* START OF CSS FOR LEGEND POPUP */
 .popup-legend {
   z-index: 99999;
