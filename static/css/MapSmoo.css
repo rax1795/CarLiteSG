@@ -1,10 +1,9 @@
 html,body{
-  background-color:rgb(59,60,62);
   background-size: cover;
   background-repeat: no-repeat;
   height: auto;
   width: auto;
-  font-family: 'Segoe UI Light', sans-serif;
+  font-family: 'Raleway', sans-serif;
   min-width: auto;
   }
 body {
@@ -37,7 +36,7 @@ label{
   font-size: 15px;
   margin-top: 0.1em;
   font-weight: bold;
-  font-family: 'Segoe UI Light', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .select2-container .select2-selection--single{
@@ -239,11 +238,12 @@ color: #f1f1f1;
   border: none;
   color: #ffffff;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 5px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 14px;
+  font-size: 13px;
+  height: 34px;
 }
 
 #sidemenu {
@@ -468,7 +468,7 @@ body.shepherd-active::after {
 
 /* END OF CSS FOR WEIGHTAGE.HTML -------------------------------------*/
 
-/* FOR TOOLTIP */
+/* START OF CSS FOR TOOLTIP -------------------------------------*/
 .btn-secondary {
   border-radius: 50%;
   font-size: 14px;
@@ -483,7 +483,7 @@ body.shepherd-active::after {
   text-align: left;
   color: #555;
   background-color: #f4f4f4;
-  font-family: 'Segoe UI Light', sans-serif;
+  font-family: 'Raleway', sans-serif;
   padding: 10px;
   /* font-size: 14px; */
 }
@@ -519,9 +519,9 @@ body.shepherd-active::after {
 #tutorial {
   z-index:9997;
 }
+/* END OF CSS FOR TOOLTIP -------------------------------------*/
 
-
-/* POP UP */
+/* START OF CSS FOR POPUP -------------------------------------*/
 .popup-container {
   z-index: 99999;
   background-color: rgb(59,60,62);
@@ -593,4 +593,35 @@ body.shepherd-active::after {
   color: #f4f4f4;
   background-color: transparent;
   border: none;
+}
+/* END OF CSS FOR POPUP -------------------------------------*/
+
+/* START OF CSS FOR INDEX SEARCH -------------------------------------*/
+.select-index {
+  width: 67%;
+  float: left;
+}
+
+.reset-index {
+  width: 33%;
+  float: left;
+  text-align: right;
+}
+
+#legend {
+  height: 60px;
+  width: 60px;
+  position: fixed;
+  bottom: 5px;
+  right: 160px;
+}
+
+.select2-selection__placeholder {
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.select2-selection__rendered {
+  font-size: 14px;
+  vertical-align: middle;
 }

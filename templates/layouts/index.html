@@ -44,6 +44,8 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
+	<!-- for Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="static/css/MapSmoo.css">
 	<link rel="stylesheet" href="static/css/sidenav.css" />
@@ -54,10 +56,10 @@
 <body>
 
 	<!-- Loading screen -->
-	<div class="loader-wrapper"><div class="loading">
+	<!-- <div class="loader-wrapper"><div class="loading">
 		<span>Loading</span>
 		</div>
-	</div>
+	</div> -->
 	<!-- End of loading screen -->
 
 	<!-- Side navigation menu -->
@@ -70,7 +72,7 @@
 	</div>
 
 	<div id="main">
-		<span id="sidemenu" style="font-size:30px;cursor:pointer" onclick="openNav()">
+		<span id="sidemenu" style="font-family: 'Raleway', sans-serif;font-size:30px;cursor:pointer" onclick="openNav()">
 			<img src='static/icons/menu2.png'>
 		</span>
 
@@ -83,13 +85,34 @@
 					<center>Zoom to neighbourhood</center>
 				</h5>
 
-				<select class="form-control select2 map1" id='firstList' name='firstList' onchange="zoomTo()">
-				</select>
+				<div class="select-reset clearfix">
+					<!-- START OF SELECT DROPDOWN LIST -->  
+					<div id="select-compare" class="select-index">
+						<select class="form-control select2 map1" id='firstList' name='firstList' onchange="zoomTo()">
+						</select> 
+					</div>
+
+					<script>
+						$('.map1').select2({ placeholder: "Zoom to neighbourhood" });
+					</script>
+					<!-- END OF SELECT DROPDOWN LIST -->
+
+					<!-- START OF RESET BUTTON -->
+					<div class="reset-index">
+						<input type="button" class="btnresetzoom" onclick="reset()" value="Reset Zoom" />
+					</div>
+					<!-- END OF RESET BUTTON -->
+				</div>
+
+
+				<!--Select Button-->
+				<!-- <select class="form-control select2 map1" id='firstList' name='firstList' onchange="zoomTo()">
+				</select> -->
 
 				<script>
 					$('.select2').select2({ placeholder: "Select neighbourhood" });
 				</script>
-				<br><br>
+				<br>
 
 				<h5 id='subzone-selected'></h5>
 				<table class="table table-dark" id='metrictable'>
@@ -146,7 +169,7 @@
 							<td>-</td>
 						</tr>
 
-						<tr>
+						<tr class="bg-info">
 							<th scope="row" style="background-color: rgb(66,74,82);">
 								Car-lite Score &nbsp;
 								<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" data-html="true" title="<b>The higher the score, the more car-lite the neighbourhood &#128522;</b>">
@@ -165,7 +188,8 @@
 				</script>
 				<br>
 				
-				<input type="button" id="reset-zoom" class="btnresetzoom" onclick="reset()" value="Reset Zoom" />
+				<input type="image" id="legend" src='static/icons/tutorial.png' class='tutorial' onclick="popupOpen();"
+					value="Tutorial" />
 				<input type="image" id="tutorial" src='static/icons/tutorial.png' class='tutorial' onclick="tour.start();"
 					value="Tutorial" />
 				<input type="image" id="popup-index" src='static/icons/matrices.png' class='popup' onclick="popupOpen();"/>
@@ -286,10 +310,126 @@
 			</div>
 			<!-- END OF POPUP -->
 
+
+			<!-- START OF LEGEND POPUP -->
+			<div class='popup-container'>
+	
+				<div class='popup-title'>
+					<h4><center><b>Matrices Weightage</b></center></h4>
+				</div>
+				
+				<button onclick='popupClose()'>
+					<span>&times;</span>
+				</button>
+				
+				<div id='popup-left' class='popup-section'>
+
+					<h6><b>Connectivity</b></h6>
+					<table class="table table-dark" id="popup-table">
+						<tbody>
+							<tr>
+								<th scope="row">
+									Availability and accessibility of public transport
+								</th>
+								<td id="availPublic">20</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Availability of infrastructure for alternative modes of transport
+								</th>
+								<td id="availAlt">15</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Road intersection density
+								</th>
+								<td id="roadInt">5</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br>
+					<h6><b>Land Use Mix</b></h6>
+					<table class="table table-dark" id="popup-table">
+						<tbody>
+							<tr>
+								<th scope="row">
+									Diversity in land use
+								</th>
+								<td id="divesityLand">10</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Proximity to essential facilities
+								</th>
+								<td id="proximityFacil">15</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div id='popup-right' class='popup-section'>
+
+					<h6><b>Supporting Facilities</b></h6>
+					<table class="table table-dark" id="popup-table">
+						<tbody>
+							<tr>
+								<th scope="row">
+									End-of-mile facilities
+								</th>
+								<td id="endMile">5</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Sheltered areas
+								</th>
+								<td id="shelter">10</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br>
+					<h6><b>Parking Management</b></h6>
+					<table class="table table-dark" id="popup-table">
+						<tbody>
+							<tr>
+								<th scope="row">
+									Availability of car park lots
+								</th>
+								<td id="carLots">5</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Car park pricing
+								</th>
+								<td id="carPricing">5</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br>
+					<h6><b>Pedestrian Safety</b></h6>
+					<table class="table table-dark" id="popup-table">
+						<tbody>
+							<tr>
+								<th scope="row">
+									Safe roads and walkways
+								</th>
+								<td id="safetys">10</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+			<!-- END OF LEGEND POPUP -->
+
+
+
 		</div>
 
 		<!-- TO FADE CONTENT WHEN MENU OPENS -->
-		<div id="for-wrap">
+		<div id="for-wrap" onclick='closeNav()'>
 		</div>
 
 	</div>

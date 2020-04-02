@@ -35,8 +35,10 @@
 
 	<!-- for Dropdown List-->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    
+	<!-- for Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="/static/css/MapSmoo.css">
     <link rel="stylesheet" href="/static/css/sidenav.css" />
@@ -62,7 +64,7 @@
 	</div>
 
 	<div id="main">
-		<span id="sidemenu" style="font-size:30px;cursor:pointer" onclick="openNav()">
+		<span id="sidemenu" style="font-family: 'Raleway', sans-serif;font-size:30px;cursor:pointer" onclick="openNav()">
 			<img src='/static/icons/menu2.png'>
 		</span>
 
@@ -428,7 +430,7 @@
         </div>
 
         <!-- TO FADE CONTENT WHEN MENU OPENS -->
-		<div id="for-wrap">
+		<div id="for-wrap" onclick='closeNav()'>
 		</div>
 
     </div>

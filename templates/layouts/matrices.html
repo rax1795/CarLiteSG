@@ -16,6 +16,12 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=1024">
+
+	<!-- for Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
+
+    
 </head>
 
 <body>
@@ -27,23 +33,31 @@
         <a href="/" style="background-color: rgba(255,255,255,0.05);">Matrices</a>
         <a href="/weightage">Adjust Matrices</a>
     </div>
+
+    <div id='landing'>
+        <!-- <p>Hello,<Br/>World!</p>       -->
+        <!-- <p id="demo"></p>   -->
+        <span id='landingpara' class='demo'>
+            <p id="typewriter" data-typewriter="Liveable, Sustainable, Car-lite Singapore"></p>
+            <span class="blinking-cursor">|</span>
+        </span>
+        
+        <!-- Scroll -->
+        <a class='scrolldown' href="#main" onclick="scrollTopAnimated"></a>
+    </div>
     
 	<div id="main">
-		<span id="sidemenu" style="font-size:30px;cursor:pointer" onclick="openNav()">
-			<img src='static/icons/menu2.png'>
+		<span id="sidemenu" style="font-family: 'Raleway', sans-serif;font-size:30px;cursor:pointer" onclick="openNav()">
+			<img src='icons/menu2.png'>
         </span>
 
         <div id="body">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                 <h2>Car-lite Scoring</h2>
-                <p>
+                <p id="description">
                     Phasellus viverra nulla ut metus varius laoreet. Nullam dictum felis eu pede mollis pretium. Suspendisse non nisl sit amet velit hendrerit rutrum. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Sed fringilla mauris sit amet nibh.Phasellus viverra nulla ut metus varius laoreet. Nullam dictum felis eu pede mollis pretium. Suspendisse non nisl sit amet velit hendrerit rutrum. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Sed fringilla mauris sit amet nibh.Phasellus viverra nulla ut metus varius laoreet. Nullam dictum felis eu pede mollis pretium. Suspendisse non nisl sit amet velit hendrerit rutrum. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Sed fringilla mauris sit amet nibh.
                 </p>
-                <br>
-                <form method='POST' action='./map'>
-                    <input type="submit" class="btnresetzoom" value="go to map" />
-                </form>
                 </div>
             </div>
 
@@ -262,11 +276,12 @@
     </div>
 
     <!-- TO FADE CONTENT WHEN MENU OPENS -->
-    <div id="for-wrap">
+    <div id="for-wrap" onclick='closeNav()'>
     </div>
 
-    <script type="text/javascript" src="/static/js/sidenav.js"></script>
-    <script type="text/javascript" src="/static/js/matrices.js"></script>
+    <script type="text/javascript" src="/static/sidenav.js"></script>
+    <script type="text/javascript" src="/static/matrices.js"></script>
+    <script type="text/javascript" src="/static/homepage.js"></script>
 
 </body>
 
