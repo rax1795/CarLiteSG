@@ -26,10 +26,24 @@ def weightage():
 def compare():
      return render_template('layouts/compare.html')
 
+@app.errorhandler(404)
+def page_not_found(error):
+	app.logger.error('Page not found: %s', (request.path))
+	return render_template('layouts/404.html'), 404
 
-@app.route('/<file_name>', methods=['GET'])
+@app.errorhandler(500)
+def internal_server_error(error):
+    app.logger.error('Server Error: %s', (error))
+    return render_template('500.htm'), 500
+
+@app.errorhandler(Exception)
+def unhandled_exception(e):
+    app.logger.error('Unhandled Exception: %s', (e))
+    return render_template('500.htm'), 500
+
+@app.route('/data/<file_name>', methods=['GET'])
 def data(file_name):
-    with open(dataFolder/(str(file_name) +'.geojson')) as json_file:
+    with open(dataFolder/(str(file_name))) as json_file:
         datas = json.load(json_file)
         return jsonify(datas)
 
