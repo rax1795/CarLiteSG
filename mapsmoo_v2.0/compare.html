@@ -71,13 +71,13 @@
         <!--Contents-->
         <div id="body">
 
-            <div class="header-compare">
+            <!-- <div class="header-compare">
                 <h4><b>
                     <center>Compare Neighbourhoods</center>
                 </b></h4>
             </div>
-            <hr>
-
+            <hr> -->
+ 
             <!-- START OF LEFT SECTION -->
             <div id="left-compare">
 
@@ -312,6 +312,8 @@
             <input type="image" id="tutorial" src='icons/tutorial.png' class='tutorial' onclick="tour.start();"
             value="Tutorial" />
             <input type="image" id="popup-compare" src='icons/matrices.png' class='popup' onclick="popupOpen();"/>
+            <input type="image" id="popup-legend" src='icons/legend.png' class='legend' onclick="compareLegendOpen();"
+            value="legend" />
 
             
 			<!-- START OF POPUP -->
@@ -425,7 +427,75 @@
 
 				</div>
 			</div>
-			<!-- END OF POPUP -->
+            <!-- END OF POPUP -->
+            
+            
+            <!-- START OF LEGEND POPUP -->
+			<div class='compare-legend'>
+	
+				<div class='popup-title'>
+					<h4><center><b>Legend</b></center></h4>
+				</div>
+				
+				<button onclick='compareLegendClose()'>
+					<span>&times;</span>
+				</button>
+				
+				<div class='legend-section'>
+					<table class="table" id="legend-table">
+						<tbody>
+							<tr>
+								<th scope="row">
+									Sheltered Areas
+								</th>
+								<td><img src="icons/sheltered-areas-legend.png" style="height:19px;"></td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Cycling Paths
+								</th>
+								<td><img src="icons/cycling-path-legend.png" style="height:19px;"></td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Road Crossings
+								</th>
+								<td><img src="icons/road-crossings-legend.png" style="height:19px;"></td>
+							</tr>
+							<tr>
+								<th scope="row">
+									School Zones
+								</th>
+								<td><img src="icons/school-zones-legend.png" style="height:19px;"></td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Silver Zones
+								</th>
+								<td><img src="icons/silver-zones-legend.png" style="height:19px;"></td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Road Humps
+								</th>
+								<td><img src="icons/road-humps-legend.png" style="height:19px;"></td>
+							</tr>
+							<tr>
+								<th scope="row">
+									Speed Regulating Strips
+								</th>
+								<td><img src="icons/speed-reg-legend.png" style="height:19px;"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<!-- TO FADE CONTENT WHEN LEGEND OPENS -->
+			<div id="for-compare-wrap" onclick='compareLegendClose();'>
+			</div>
+
+			<!-- END OF LEGEND POPUP -->
             
         </div>
 
@@ -445,7 +515,7 @@
     <!-- LOADING SCREEN -->
     <script>
         $(window).on("load",function(){
-		$(".loader-wrapper").delay(1000).fadeOut(100)
+		$(".loader-wrapper").delay(1300).fadeOut(100)
 			});
     </script>
 

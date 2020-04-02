@@ -56,10 +56,10 @@
 <body>
 
 	<!-- Loading screen -->
-	<!-- <div class="loader-wrapper"><div class="loading">
+	<div class="loader-wrapper"><div class="loading">
 		<span>Loading</span>
 		</div>
-	</div> -->
+	</div>
 	<!-- End of loading screen -->
 
 	<!-- Side navigation menu -->
@@ -170,13 +170,13 @@
 						</tr>
 
 						<tr class="bg-info">
-							<th scope="row" style="background-color: rgb(66,74,82);">
+							<th scope="row">
 								Car-lite Score &nbsp;
 								<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" data-html="true" title="<b>The higher the score, the more car-lite the neighbourhood &#128522;</b>">
 									<i><b>i</b></i>
 								</button>
 							</th>
-							<td style="background-color: rgb(66,74,82)">-</td>
+							<td>-</td>
 						</tr>
 					</tbody>
 				</table>
@@ -188,8 +188,8 @@
 				</script>
 				<br>
 				
-				<input type="image" id="legend" src='icons/tutorial.png' class='tutorial' onclick="legendOpen();"
-					value="Tutorial" />
+				<input type="image" id="legend" src='icons/legend.png' class='legend' onclick="legendOpen();"
+					value="legend" />
 				<input type="image" id="tutorial" src='icons/tutorial.png' class='tutorial' onclick="tour.start();"
 					value="Tutorial" />
 				<input type="image" id="popup-index" src='icons/matrices.png' class='popup' onclick="popupOpen();"/>
@@ -377,10 +377,6 @@
 			</div>
 
 			<!-- END OF LEGEND POPUP -->
-
-
-
-
 		</div>
 
 		<!-- TO FADE CONTENT WHEN MENU OPENS -->
@@ -404,7 +400,7 @@
 	<!-- LOADING SCREEN -->
 	<script>
         $(window).on("load",function(){
-		$(".loader-wrapper").delay(700).fadeOut(100)
+		$(".loader-wrapper").delay(1000).fadeOut(100)
 			});
     </script>
 

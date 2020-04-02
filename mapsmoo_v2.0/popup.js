@@ -36,3 +36,14 @@ function legendClose() {
     document.getElementById("legend-wrap").classList.remove("legend-hide");
 
 }
+
+function compareLegendOpen() {
+    $(".compare-legend").css('display','block');
+    document.getElementById("for-compare-wrap").setAttribute("class", "fadeMe");
+}
+
+function compareLegendClose() {
+    $('.compare-legend').css('display','none');
+    document.getElementById("for-compare-wrap").classList.remove("fadeMe");
+
+}

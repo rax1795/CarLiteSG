@@ -271,7 +271,7 @@ color: #f1f1f1;
   width: 60px;
   position: fixed;
   bottom: 5px;
-  right: 80px;
+  right: 70px;
 }
 
 .guide .shepherd-button{
@@ -337,7 +337,7 @@ body.shepherd-active::after {
 .title-container{
   margin-left: 5%;
   margin-right: 5%;
-  /* margin-top: 5%; */
+  margin-top: 12%;
   /* margin-bottom: 5%; */
   color: white;
 }
@@ -379,6 +379,44 @@ body.shepherd-active::after {
   bottom: 70px;
   right: 5px;
   z-index: 9997;
+}
+
+#popup-legend {
+  height: 60px;
+  width: 60px;
+  position: fixed;
+  bottom: 135px;
+  right: 5px;
+  z-index: 9997;
+}
+
+.compare-legend {
+  z-index: 99999;
+  background-color: rgb(59,60,62);
+  padding: 10px;
+  width: 30%;
+  height: 90%;
+  border-radius: 20px;
+  color: white;
+  /* center the div */
+  position: fixed;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+
+.compare-legend button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-right: 15px;
+  font-size: 40px;
+  color: #f4f4f4;
+  background-color: transparent;
+  border: none;
 }
 
 /* END OF CSS FOR COMPARE.HTML -------------------------------------*/
@@ -608,14 +646,6 @@ body.shepherd-active::after {
   text-align: right;
 }
 
-#legend {
-  height: 60px;
-  width: 60px;
-  position: fixed;
-  bottom: 5px;
-  right: 160px;
-}
-
 .select2-selection__placeholder {
   font-size: 14px;
   vertical-align: middle;
@@ -690,4 +720,13 @@ body.shepherd-active::after {
   overflow-x: hidden;
   opacity:    0.5; 
   z-index:    9999;
+}
+
+/* legend button */
+#legend {
+  height: 60px;
+  width: 60px;
+  position: fixed;
+  bottom: 5px;
+  right: 135px;
 }
