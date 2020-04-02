@@ -328,7 +328,7 @@ p {
   content: ' ';
 }
 
-/* TYPEWRITER */
+/* ------------ TYPEWRITER ------------ */
 #typewriter {
 display: inline;
 }
@@ -402,7 +402,7 @@ to {
   font-size: 25px;
 }
 
-/* Scroll button ------------------------------------------------------------*/
+/* ------------ SCROLL DOWN BUTTON ------------ */
 #landing a {
 	position: absolute;
 	bottom: 80px;

@@ -58,7 +58,7 @@ myLoop();
 
 // For Scrolling
 $(function() {
-    $('a').on('click', function(e) {
+    $('.scrolldown').on('click', function(e) {
       e.preventDefault();
       $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
     });
