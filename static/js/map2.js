@@ -269,9 +269,44 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
                         '#d7191c';
     }
 
+
     function style1(feature) {
+        if(sessionStorage.getItem("availPublic") === null){
+            var final_score = feature.properties.FIN_SCORE;
+        }else{
+            var availPublic = parseInt(sessionStorage.getItem('availPublic')),
+                availAlt = parseInt(sessionStorage.getItem('availAlt')),
+                roadInt = parseInt(sessionStorage.getItem('roadInt')),
+                connectivity = (feature.properties.NLEN_PSQM * availAlt) + (feature.properties.PERC_HOMEC * availPublic) + (feature.properties.XTION_PSQM * roadInt),
+
+                divesityLand = parseInt(sessionStorage.getItem('divesityLand')),
+                proximityFacil = parseInt(sessionStorage.getItem('proximityFacil')),
+                landUse = parseInt((feature.properties.PERC_USE * divesityLand) + (feature.properties.PERC_FACIL * proximityFacil)),
+
+                endMile = parseInt(sessionStorage.getItem('endMile')),
+                shelter = parseInt(sessionStorage.getItem('shelter')),
+                facilities = (feature.properties['BIKERACKS?'] * endMile) + (feature.properties.NPERC_SHEL * shelter),
+
+                carLots = parseInt(sessionStorage.getItem('carLots')),
+                carPricing = parseInt(sessionStorage.getItem('carPricing')),
+                parking = ((1 - feature.properties.NLOTS_PHH) * carLots) + ((1 - feature.properties.CP_SCORE) * carPricing),
+                
+                safetys = parseInt(sessionStorage.getItem('safety'))
+                if(feature.properties["SCHOOL?"]==1 && feature.properties["ELDERZONE?"]==1){
+                    var safety = ((feature.properties.NRDSTY_PM + feature.properties["ELD_FRNLY?"] + feature.properties["SCH_FRNLY?"])/3)*safetys
+                } else if (feature.properties["SCHOOL?"]==1 && feature.properties["ELDERZONE?"]==0){
+                    var safety = ((feature.properties.NRDSTY_PM +  feature.properties["SCH_FRNLY?"])/2)*safetys
+                } else if (feature.properties["SCHOOL?"]==0 && feature.properties["ELDERZONE?"]==1){
+                    var safety = ((feature.properties.NRDSTY_PM +  feature.properties["ELD_FRNLY?"])/2)*safetys
+                } else{
+                    var safety = feature.properties.NRDSTY_PM*safetys
+                }
+
+            var final_score = Math.round((connectivity+landUse+facilities+parking+safety));
+        }
+
         return {
-            fillColor: getColor1(feature.properties.FIN_SCORE),
+            fillColor: getColor1(final_score),
             weight: 2,
             opacity: 1,
             color: 'white',
@@ -279,6 +314,7 @@ $.when(subzone23, speedstrips0, roadhumps0, chas0, linkway0, hawker0, hopitals0,
             fillOpacity: 0.7
         };
     }
+
 
     // function populateTable(x) {
     //     var layer = x.target;
