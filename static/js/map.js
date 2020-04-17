@@ -536,8 +536,7 @@ $.when(subzone, speedstrips, roadhumps, chas, linkway, hawker, hopitals, park, s
             layer.setIcon(bikerackIcon)
         }
     }
-
-
+    
     var bicycle2 = L.geoJSON(bicycle.responseJSON, {
         onEachFeature: onEachBicycle
     })
